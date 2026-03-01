@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FFD600">
+<title>ISHAN PRESCHOOL AND ACADEMY</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFD600;--yl:#FFF176;--yxl:#FFFDE7;--bg:#FFF8E1;--sur:#FFFFFFEF;--bd:#FFE082;--bdd:#FFC107;--tx:#1A1200;--tx2:#4A3800;--mu:#8D6E00;--ac:#E65100;--ac2:#00796B;--gn:#2E7D32;--rd:#C62828;--bl:#1565C0;--pu:#7B1FA2;--r:16px;--rs:10px;--sh:0 4px 20px rgba(0,0,0,0.09);--shl:0 8px 40px rgba(0,0,0,0.13)}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden}
+.screen{display:none;min-height:100vh;flex-direction:column;animation:fi .22s ease}
+.screen.active{display:flex}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#landing{align-items:stretch;justify-content:flex-start}
+.hero{background:linear-gradient(160deg,#FFD600 0%,#FFE57F 55%,#FFFDE7 100%);border-bottom-left-radius:36px;border-bottom-right-radius:36px;padding:3rem 2rem 2.5rem;text-align:center;box-shadow:0 8px 32px rgba(255,193,7,0.3);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.07) 0,rgba(255,255,255,0.07) 1px,transparent 1px,transparent 20px)}
+.org-logo{width:88px;height:88px;border-radius:22px;background:white;box-shadow:0 6px 24px rgba(0,0,0,0.13);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:2.5rem;position:relative;z-index:1}
+.hero h1{font-size:1.4rem;font-weight:900;color:#1A1200;line-height:1.2;position:relative;z-index:1;text-transform:uppercase}
+.hero h1 em{color:var(--ac);font-style:normal}
+.hero .tag{font-size:0.82rem;color:var(--tx2);margin-top:0.5rem;font-weight:700;font-style:italic;position:relative;z-index:1}
+.cards{padding:2rem 1.25rem;display:flex;flex-direction:column;gap:0.85rem}
+.lbl{font-size:0.68rem;font-weight:800;letter-spacing:1.5px;color:var(--mu);text-transform:uppercase;margin-bottom:0.2rem;padding-left:0.2rem}
+.rc{background:var(--sur);border:1.5px solid rgba(255,255,255,0.9);border-radius:var(--r);padding:1.15rem 1.35rem;cursor:pointer;display:flex;align-items:center;gap:1rem;box-shadow:var(--sh);transition:transform .15s}
+.rc:active{transform:scale(0.97)}
+.ci{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;flex-shrink:0}
+.ciy{background:#FFD600}.cit{background:#00897B}.cio{background:#FF8F00}
+.rt{flex:1}.rt strong{font-size:0.97rem;font-weight:700;display:block}.rt small{font-size:0.75rem;color:var(--mu);display:block;margin-top:0.1rem}
+.arr{color:var(--mu);font-size:1.1rem}
+.tb{background:linear-gradient(90deg,var(--y) 0%,var(--yl) 100%);padding:0.85rem 1.25rem;display:flex;align-items:center;gap:0.9rem;box-shadow:0 2px 12px rgba(255,193,7,0.22);position:sticky;top:0;z-index:50}
+.bk{background:rgba(255,255,255,0.55);border-radius:9px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;color:var(--tx);flex-shrink:0;border:none}
+.tbi{flex:1}.tbi h2{font-size:0.93rem;font-weight:800;color:var(--tx);line-height:1.2}.tbi small{font-size:0.67rem;color:var(--tx2);font-weight:600}
+.lgsm{width:36px;height:36px;border-radius:9px;background:white;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.cnt{flex:1;overflow-y:auto;padding:1.25rem;background:var(--bg)}
+.cntc{flex:1;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:var(--bg)}
+.card{background:var(--sur);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.3rem;margin-bottom:1rem;box-shadow:var(--sh)}
+.chdr{font-size:0.7rem;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:1rem}
+.f{margin-bottom:0.9rem}.f label{display:block;font-size:0.78rem;font-weight:600;color:var(--tx2);margin-bottom:0.32rem}
+.f input,.f select,.f textarea{width:100%;background:var(--yxl);border:1.5px solid var(--bd);border-radius:var(--rs);padding:0.75rem 1rem;color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color .18s,box-shadow .18s}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(230,81,0,0.1)}
+.f textarea{resize:vertical;min-height:75px}
+.pw{position:relative}.pw input{padding-right:3rem!important}
+.eye{position:absolute;right:0.9rem;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1rem;background:none;border:none;color:var(--mu);padding:0;line-height:1}
+.cats{display:flex;flex-direction:column;gap:0.6rem}
+.co{background:var(--yxl);border:2px solid var(--bd);border-radius:var(--rs);padding:0.85rem 1rem;cursor:pointer;display:flex;align-items:center;gap:0.85rem;transition:all .18s;font-weight:600;font-size:0.87rem}
+.co.sel{border-color:var(--ac2);background:#E0F2F1;color:var(--ac2)}
+.ck{width:22px;height:22px;border-radius:6px;border:2px solid var(--bdd);display:flex;align-items:center;justify-content:center;font-size:0.82rem;flex-shrink:0;background:white}
+.co.sel .ck{background:var(--ac2);border-color:var(--ac2);color:white}
+.btn{width:100%;padding:0.88rem;border-radius:var(--rs);border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:0.5rem}
+.bp{background:linear-gradient(135deg,#E65100,#FF6D00);color:white;box-shadow:0 4px 14px rgba(230,81,0,0.32)}
+.by{background:var(--y);color:var(--tx);box-shadow:0 4px 14px rgba(255,193,7,0.38)}
+.bsu{background:linear-gradient(135deg,#2E7D32,#43A047);color:white}
+.bdn{background:linear-gradient(135deg,#C62828,#E53935);color:white}
+.bod{background:transparent;color:var(--tx);border:1.5px solid rgba(0,0,0,0.2)}
+.bpu{background:linear-gradient(135deg,#6A1B9A,#9C27B0);color:white}
+.bsm{width:auto;padding:0.4rem 0.95rem;font-size:0.78rem;border-radius:8px}
+.btn:active{transform:scale(0.97)}
+.pu{width:96px;height:96px;border-radius:50%;background:var(--yxl);border:2.5px dashed var(--bdd);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.2rem;margin:0 auto 1.5rem;overflow:hidden;position:relative}
+.pu img{width:100%;height:100%;object-fit:cover;position:absolute}
+.pui{font-size:1.9rem;position:relative}.pu small{font-size:0.6rem;color:var(--mu);position:relative}
+#photoInput{display:none}
+.tabs{display:flex;background:var(--y);border-bottom:2px solid var(--bdd);overflow-x:auto}
+.tab{flex:1;min-width:60px;padding:0.8rem 0.4rem;text-align:center;font-size:0.68rem;font-weight:700;color:var(--tx2);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .15s}
+.tab.act{color:var(--ac);border-color:var(--ac);background:rgba(255,255,255,0.35)}
+.sr{display:flex;gap:0.75rem;margin-bottom:1rem}
+.sc{flex:1;background:var(--sur);border:1.5px solid var(--bd);border-radius:13px;padding:1rem 0.75rem;text-align:center;box-shadow:var(--sh)}
+.sc .n{font-size:1.9rem;font-weight:900}.sc .l{font-size:0.65rem;color:var(--mu);margin-top:0.2rem;font-weight:600}
+.sw{position:relative;margin-bottom:1rem}.sw .si{position:absolute;left:0.9rem;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none}
+.sw input{padding-left:2.8rem!important;background:white!important;border:1.5px solid var(--bdd)!important;font-size:1rem!important}
+.sp{background:var(--sur);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.35rem;display:none;box-shadow:var(--sh)}.sp.vis{display:block}
+.ph{display:flex;gap:1rem;align-items:center;margin-bottom:1.3rem}
+.pp{width:66px;height:66px;border-radius:50%;background:var(--yl);border:3px solid var(--bdd);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.pp img{width:100%;height:100%;object-fit:cover}.pi h3{font-size:1.05rem;font-weight:800}
+.ctr{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.3rem}
+.ct{font-size:0.64rem;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-block}
+.ct.sc2{background:#E3F2FD;color:#1565C0;border:1px solid #90CAF9}.ct.tu{background:#F3E5F5;color:#6A1B9A;border:1px solid #CE93D8}.ct.bo{background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem}
+.ii label{font-size:0.67rem;font-weight:800;color:var(--mu);display:block;margin-bottom:0.12rem;text-transform:uppercase;letter-spacing:0.5px}.ii span{font-size:0.84rem;font-weight:500}
+.fs{border-top:1.5px solid var(--bd);padding-top:1rem}.fr{display:flex;align-items:center;justify-content:space-between}
+.fb{padding:5px 14px;border-radius:20px;font-size:0.75rem;font-weight:700}.fb.pd{background:#E8F5E9;color:var(--gn);border:1.5px solid #A5D6A7}.fb.up{background:#FFEBEE;color:var(--rd);border:1.5px solid #EF9A9A}
+.fbtns{display:flex;gap:0.5rem;margin-top:0.85rem}
+.sli{background:var(--sur);border:1.5px solid var(--bd);border-radius:12px;padding:0.9rem 1rem;margin-bottom:0.7rem;display:flex;align-items:center;gap:0.8rem;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.mp{width:44px;height:44px;border-radius:50%;background:var(--yl);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;border:2px solid var(--bdd)}
+.mp img{width:100%;height:100%;object-fit:cover}.si2{flex:1;min-width:0}.si2 strong{font-size:0.9rem;font-weight:700;display:block}.si2 small{color:var(--mu);font-size:0.72rem;display:block}
+.sr2{display:flex;flex-direction:column;align-items:flex-end;gap:0.35rem}
+.ac{background:linear-gradient(135deg,#FF8F00,#FFB300);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:0.8rem;color:white;box-shadow:0 4px 16px rgba(255,143,0,0.28);position:relative;overflow:hidden}
+.ac::before{content:'📢';position:absolute;right:-8px;bottom:-12px;font-size:4.5rem;opacity:0.14}
+.ad{font-size:0.68rem;opacity:0.8;margin-bottom:0.4rem}.am{font-size:0.9rem;font-weight:600;line-height:1.45}
+.adel{position:absolute;top:0.75rem;right:0.75rem;background:rgba(255,255,255,0.22);border:none;border-radius:6px;width:26px;height:26px;cursor:pointer;color:white;font-size:0.8rem;display:flex;align-items:center;justify-content:center}
+.ae{text-align:center;padding:2.5rem 1rem;color:var(--mu)}.ae span{font-size:2.8rem;display:block;margin-bottom:0.5rem}
+.cbox{background:var(--sur);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.2rem;margin-bottom:1rem;box-shadow:var(--sh)}
+.cbox textarea{width:100%;background:var(--yxl);border:1.5px solid var(--bd);border-radius:var(--rs);padding:0.75rem;color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;resize:vertical;min-height:85px;outline:none}
+.poh{background:linear-gradient(160deg,var(--y) 0%,var(--yl) 100%);padding:2rem 1.5rem;text-align:center;border-bottom-left-radius:28px;border-bottom-right-radius:28px;box-shadow:0 4px 20px rgba(255,193,7,0.22)}
+.poph{width:88px;height:88px;border-radius:50%;background:white;border:4px solid white;box-shadow:0 4px 16px rgba(0,0,0,0.13);overflow:hidden;margin:0 auto 0.9rem;display:flex;align-items:center;justify-content:center;font-size:2.8rem}
+.poph img{width:100%;height:100%;object-fit:cover}.poh h2{font-size:1.25rem;font-weight:800}
+.ps{font-size:0.8rem;color:var(--tx2);margin-top:0.25rem;font-weight:600}
+.ib{background:var(--sur);border:1.5px solid var(--bd);border-radius:13px;padding:1.2rem;margin-bottom:0.8rem;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.ib h4{font-size:0.7rem;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.9rem}
+.ir{display:flex;justify-content:space-between;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid var(--bd)}.ir:last-child{border-bottom:none}
+.irl{font-size:0.77rem;color:var(--mu);font-weight:600;flex-shrink:0}.irv{font-size:0.82rem;font-weight:700;text-align:right;max-width:60%;word-break:break-word}
+.fp{display:inline-flex;align-items:center;gap:0.4rem;padding:0.42rem 1rem;border-radius:30px;font-size:0.82rem;font-weight:700}
+.fp.pd{background:#E8F5E9;color:var(--gn);border:2px solid #A5D6A7}.fp.up{background:#FFEBEE;color:var(--rd);border:2px solid #EF9A9A}
+.lb{width:100%;max-width:380px;background:var(--sur);border:1.5px solid var(--bd);border-radius:22px;padding:2.2rem 2rem;box-shadow:var(--shl)}
+.lbg{width:62px;height:62px;border-radius:17px;background:var(--y);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden;box-shadow:0 4px 14px rgba(255,193,7,0.38)}
+.lb h2{font-size:1.28rem;font-weight:900;text-align:center}.lbs{font-size:0.79rem;color:var(--mu);text-align:center;margin-bottom:1.5rem;margin-top:0.25rem}
+.em{color:var(--rd);font-size:0.8rem;margin-top:0.4rem;display:none;font-weight:600}
+.dv{display:flex;align-items:center;gap:0.75rem;margin:1rem 0}.dv span{flex:1;height:1px;background:var(--bd)}.dv small{color:var(--mu);font-size:0.74rem;font-weight:600}
+.sn{background:linear-gradient(135deg,#FF8F00,#FFB300);border-radius:12px;padding:0.9rem 1rem;margin-bottom:1rem;color:white;font-size:0.8rem;font-weight:600;line-height:1.5}
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--tx);color:var(--y);padding:0.75rem 1.5rem;border-radius:30px;font-size:0.85rem;font-weight:700;transition:transform .3s;z-index:999;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.18)}
+.toast.show{transform:translateX(-50%) translateY(0)}.toast.ok{background:var(--gn);color:white}.toast.er{background:var(--rd);color:white}
+.emp{text-align:center;padding:2.5rem 1rem;color:var(--mu)}.emp span{font-size:3rem;display:block;margin-bottom:0.75rem}.emp p{font-size:0.85rem}
+.mb{margin-bottom:2.5rem}
+</style>
+</head>
+<body>
+<div id="landing" class="screen active">
+  <div class="hero">
+    <div class="org-logo">🎓</div>
+    <h1>ISHAN PRESCHOOL<br><em>AND ACADEMY</em></h1>
+    <p class="tag">Our Promise Is Progress</p>
+  </div>
+  <div class="cards">
+    <div class="lbl">Student Portal</div>
+    <div class="rc" onclick="show('sLogin')"><div class="ci ciy">🧑‍🎓</div><div class="rt"><strong>Student Login</strong><small>View your portfolio &amp; announcements</small></div><span class="arr">›</span></div>
+    <div class="rc" onclick="show('sReg')"><div class="ci cit">📝</div><div class="rt"><strong>New Registration</strong><small>Register as a new student</small></div><span class="arr">›</span></div>
+    <div class="lbl" style="margin-top:0.5rem">Administration</div>
+    <div class="rc" onclick="show('aLogin')"><div class="ci cio">🛡️</div><div class="rt"><strong>Admin Login</strong><small>Manage students, fees &amp; announcements</small></div><span class="arr">›</span></div>
+  </div>
+</div>
+<div id="sLogin" class="screen">
+  <div class="tb"><button class="bk" onclick="show('landing')">←</button><div class="tbi"><h2>Student Login</h2><small>ISHAN PRESCHOOL AND ACADEMY</small></div><div class="lgsm">🎓</div></div>
+  <div class="cntc"><div class="lb"><div class="lbg">🎓</div><h2>Welcome Back!</h2><p class="lbs">Sign in with your phone number or email</p><div class="f"><label>Phone Number or Email</label><input type="text" id="sl_id" placeholder="Phone or email address"></div><p class="em" id="slErr">❌ No student found.</p><button class="btn bp" onclick="studentLogin()" style="margin-top:0.4rem">Login →</button><div class="dv"><span></span><small>New here?</small><span></span></div><button class="btn by" onclick="show('sReg')">Register Now</button></div></div>
+</div>
+<div id="sReg" class="screen">
+  <div class="tb"><button class="bk" onclick="show('landing')">←</button><div class="tbi"><h2>Student Registration</h2><small>ISHAN PRESCHOOL AND ACADEMY</small></div><div class="lgsm">🎓</div></div>
+  <div class="cnt">
+    <div class="card"><div class="chdr">🏫 Enrolment Category *</div><div class="cats"><div class="co" id="cat_school" onclick="selCat('school')"><div class="ck" id="chk_school"></div><span>Ishan Preschool</span></div><div class="co" id="cat_tution" onclick="selCat('tution')"><div class="ck" id="chk_tution"></div><span>Ishan Academy (Tuition)</span></div><div class="co" id="cat_both" onclick="selCat('both')"><div class="ck" id="chk_both"></div><span>Both (Preschool + Tuition)</span></div></div></div>
+    <div class="card"><div class="chdr">📷 Profile Photo</div><div class="pu" onclick="document.getElementById('photoInput').click()"><img id="photoPrev" style="display:none"><span class="pui" id="photoIco">📸</span><small>Tap to upload</small></div><input type="file" id="photoInput" accept="image/*" onchange="prevPhoto(this)"></div>
+    <div class="card"><div class="chdr">👤 Personal Details</div><div class="f"><label>Full Name *</label><input type="text" id="s_nm" placeholder="Enter full name"></div><div class="f"><label>Phone Number *</label><input type="tel" id="s_ph" placeholder="+91 XXXXX XXXXX"></div><div class="f"><label>Email Address *</label><input type="email" id="s_em" placeholder="your@email.com"></div><div class="f"><label>Address *</label><textarea id="s_ad" placeholder="House no, Street, City, State, PIN"></textarea></div></div>
+    <div class="card"><div class="chdr">👨‍👩‍👦 Parent / Guardian</div><div class="f"><label>Parent Name *</label><input type="text" id="s_pn" placeholder="Parent or guardian name"></div><div class="f"><label>Parent Phone *</label><input type="tel" id="s_pp" placeholder="+91 XXXXX XXXXX"></div><div class="f"><label>Relationship</label><select id="s_rel"><option>Father</option><option>Mother</option><option>Guardian</option><option>Other</option></select></div></div>
+    <div class="card"><div class="chdr">🎓 Course / Class</div><div class="f"><label>Class / Standard *</label><input type="text" id="s_co" placeholder="e.g. Nursery / Class 2 / Class 10"></div><div class="f"><label>Total Fee (₹)</label><input type="number" id="s_fe" placeholder="e.g. 15000"></div></div>
+    <button class="btn bp mb" onclick="registerStudent()">✅ Submit Registration</button>
+  </div>
+</div>
+<div id="sPort" class="screen">
+  <div class="tb"><button class="bk" onclick="show('sLogin')">←</button><div class="tbi"><h2>My Portfolio</h2><small id="pt_top">—</small></div><button class="btn bod bsm" onclick="show('sLogin')">Logout</button></div>
+  <div class="tabs"><div class="tab act" onclick="portTab('ptPro',this)">📋 Profile</div><div class="tab" onclick="portTab('ptAnn',this)">📢 Announcements</div></div>
+  <div id="ptPro"><div class="poh"><div class="poph" id="pt_photo">🧑‍🎓</div><h2 id="pt_name">—</h2><div class="ps" id="pt_cat">—</div><div class="ps" id="pt_course">—</div></div><div class="cnt" style="padding-top:1rem"><div class="ib"><h4>📞 Contact</h4><div class="ir"><span class="irl">Phone</span><span class="irv" id="pt_phone">—</span></div><div class="ir"><span class="irl">Email</span><span class="irv" id="pt_email">—</span></div><div class="ir"><span class="irl">Address</span><span class="irv" id="pt_addr">—</span></div></div><div class="ib"><h4>👨‍👩‍👦 Parent</h4><div class="ir"><span class="irl">Name</span><span class="irv" id="pt_par">—</span></div><div class="ir"><span class="irl">Phone</span><span class="irv" id="pt_pph">—</span></div><div class="ir"><span class="irl">Relation</span><span class="irv" id="pt_rel">—</span></div></div><div class="ib"><h4>💰 Fee Status</h4><div class="ir"><span class="irl">Total Fee</span><span class="irv" id="pt_fee">—</span></div><div class="ir"><span class="irl">Status</span><span class="irv"><span class="fp" id="pt_fst">—</span></span></div><div class="ir"><span class="irl">Registered</span><span class="irv" id="pt_date">—</span></div></div></div></div>
+  <div id="ptAnn" style="display:none"><div class="cnt" style="padding-top:1rem"><div id="pt_annList"></div></div></div>
+</div>
+<div id="aReg" class="screen">
+  <div class="tb"><button class="bk" onclick="show('aLogin')">←</button><div class="tbi"><h2>Admin Registration</h2><small>ISHAN PRESCHOOL AND ACADEMY</small></div><div class="lgsm">🛡️</div></div>
+  <div class="cntc"><div class="lb"><div class="lbg">🛡️</div><h2>Create Admin Account</h2><p class="lbs">Register with your own email and password</p><div class="sn">🔐 Any number of admins can register.</div><div class="f"><label>Your Name</label><input type="text" id="ar_nm" placeholder="Your full name"></div><div class="f"><label>Email Address *</label><input type="email" id="ar_em" placeholder="you@example.com"></div><div class="f"><label>Password *</label><div class="pw"><input type="password" id="ar_pw" placeholder="Min 6 characters"><button class="eye" onclick="togglePw('ar_pw',this)">👁</button></div></div><div class="f"><label>Confirm Password *</label><div class="pw"><input type="password" id="ar_pw2" placeholder="Re-enter password"><button class="eye" onclick="togglePw('ar_pw2',this)">👁</button></div></div><p class="em" id="arErr"></p><button class="btn bp" onclick="adminRegister()" style="margin-top:0.6rem">Register →</button><button class="btn bod" style="margin-top:0.6rem" onclick="show('aLogin')">Already have account? Login</button></div></div>
+</div>
+<div id="aLogin" class="screen">
+  <div class="tb"><button class="bk" onclick="show('landing')">←</button><div class="tbi"><h2>Admin Login</h2><small>ISHAN PRESCHOOL AND ACADEMY</small></div><div class="lgsm">🛡️</div></div>
+  <div class="cntc"><div class="lb"><div class="lbg">🛡️</div><h2>Admin Portal</h2><p class="lbs">Sign in to manage the academy</p><div class="f"><label>Email</label><input type="email" id="al_em" placeholder="Your admin email"></div><div class="f"><label>Password</label><div class="pw"><input type="password" id="al_pw" placeholder="Your password"><button class="eye" onclick="togglePw('al_pw',this)">👁</button></div></div><p class="em" id="alErr">❌ Incorrect email or password</p><button class="btn bp" onclick="adminLogin()" style="margin-top:0.5rem">Login →</button><div class="dv"><span></span><small>New admin?</small><span></span></div><button class="btn by" onclick="show('aReg')">Register as Admin</button><button class="btn bod" style="margin-top:0.6rem;font-size:0.78rem" onclick="clearAllAdmins()">⚠️ Clear all admin accounts</button></div></div>
+</div>
+<div id="aDash" class="screen">
+  <div class="tb"><div class="lgsm">🛡️</div><div class="tbi"><h2>Admin Dashboard</h2><small id="ad_lbl">ISHAN PRESCHOOL AND ACADEMY</small></div><button class="btn bod bsm" onclick="adminLogout()">Logout</button></div>
+  <div class="tabs"><div class="tab act" onclick="aTab('ts',this)">🔍 Search</div><div class="tab" onclick="aTab('ta',this)">📋 All</div><div class="tab" onclick="aTab('tn',this)">📢 Announce</div><div class="tab" onclick="aTab('tm',this)">👥 Admins</div></div>
+  <div id="ts" class="cnt">
+    <div class="sr"><div class="sc"><div class="n" id="st_tot" style="color:var(--bl)">0</div><div class="l">Total</div></div><div class="sc"><div class="n" id="st_pd" style="color:var(--gn)">0</div><div class="l">Paid</div></div><div class="sc"><div class="n" id="st_up" style="color:var(--rd)">0</div><div class="l">Unpaid</div></div></div>
+    <div class="sw"><span class="si">🔍</span><div class="f" style="margin:0"><input type="tel" id="srch" placeholder="Type phone number to search..." oninput="searchStudent()"></div></div>
+    <div class="sp" id="stProf">
+      <div class="ph"><div class="pp" id="stPhoto">🧑‍🎓</div><div class="pi"><h3 id="sp_nm">—</h3><div class="ctr" id="sp_ct"></div><div style="font-size:0.8rem;color:var(--mu);margin-top:0.2rem" id="sp_ph">—</div></div></div>
+      <div class="ig"><div class="ii"><label>Course/Class</label><span id="sp_co">—</span></div><div class="ii"><label>Email</label><span id="sp_em">—</span></div><div class="ii"><label>Address</label><span id="sp_ad">—</span></div><div class="ii"><label>Parent Name</label><span id="sp_pn">—</span></div><div class="ii"><label>Parent Phone</label><span id="sp_pp">—</span></div><div class="ii"><label>Registered On</label><span id="sp_dt">—</span></div></div>
+      <div class="fs"><div class="fr"><div><div style="font-size:0.7rem;color:var(--mu);font-weight:800;text-transform:uppercase">Total Fee</div><div style="font-size:1.3rem;font-weight:900;margin-top:0.15rem" id="sp_fe">₹0</div></div><span class="fb" id="sp_fs">UNPAID</span></div><div class="fbtns"><button class="btn bsu bsm" onclick="setFee('paid')">✅ Mark Paid</button><button class="btn bdn bsm" onclick="setFee('unpaid')">❌ Mark Unpaid</button></div><button class="btn bpu" style="margin-top:1rem" onclick="delStudentSearch()">🗑️ Delete This Student Record</button></div>
+    </div>
+    <div id="srchEmp" class="emp" style="display:none"><span>🔍</span><p>No student found with this phone number</p></div>
+  </div>
+  <div id="ta" class="cnt" style="display:none"><div id="allList"><div class="emp"><span>📋</span><p>No students registered yet</p></div></div></div>
+  <div id="tn" class="cnt" style="display:none"><div class="cbox"><div class="chdr" style="margin-bottom:0.75rem">📢 Post New Announcement</div><textarea id="annTxt" placeholder="Type your announcement..."></textarea><button class="btn bp" style="margin-top:0.75rem" onclick="postAnn()">📣 Post to All Students</button></div><div id="annList"></div></div>
+  <div id="tm" class="cnt" style="display:none"><div class="cbox"><div class="chdr" style="margin-bottom:0.75rem">➕ Add New Admin</div><div class="f"><label>Name</label><input type="text" id="na_nm" placeholder="Admin name"></div><div class="f"><label>Email *</label><input type="email" id="na_em" placeholder="admin@example.com"></div><div class="f"><label>Password *</label><div class="pw"><input type="password" id="na_pw" placeholder="Create password"><button class="eye" onclick="togglePw('na_pw',this)">👁</button></div></div><p class="em" id="naErr" style="margin-bottom:0.5rem"></p><button class="btn bp" style="margin-top:0.5rem" onclick="addAdmin()">➕ Add Admin Account</button></div><div style="font-size:0.7rem;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:0.75rem">All Registered Admins</div><div id="admList"></div></div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const K={students:'ishan_students',admins:'ishan_admins',ann:'ishan_ann'};
+const get=k=>JSON.parse(localStorage.getItem(k)||'[]');
+const set=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const fmt=p=>p.replace(/\D/g,'');
+const Students={all:()=>get(K.students),save:a=>set(K.students,a),add:s=>{const a=Students.all();a.push(s);Students.save(a);},byPhone:p=>Students.all().find(s=>fmt(s.phone)===fmt(p)),byId:id=>{id=id.toLowerCase().trim();return Students.all().find(s=>fmt(s.phone)===fmt(id)||(s.email&&s.email.toLowerCase()===id));},setFee:(p,st)=>{const a=Students.all();const i=a.findIndex(s=>fmt(s.phone)===fmt(p));if(i>=0){a[i].feePaid=st;Students.save(a);}},remove:p=>Students.save(Students.all().filter(s=>fmt(s.phone)!==fmt(p)))};
+const Admins={all:()=>get(K.admins),save:a=>set(K.admins,a),add:obj=>{const a=Admins.all();a.push(obj);Admins.save(a);},byEmail:em=>Admins.all().find(a=>a.email.toLowerCase()===em.toLowerCase()),login:(em,pw)=>Admins.all().find(a=>a.email.toLowerCase()===em.toLowerCase()&&a.password===pw),remove:em=>Admins.save(Admins.all().filter(a=>a.email.toLowerCase()!==em.toLowerCase()))};
+const Ann={all:()=>get(K.ann),add:msg=>{const a=Ann.all();a.unshift({id:Date.now(),msg,date:new Date().toLocaleString('en-IN')});set(K.ann,a);},remove:id=>set(K.ann,Ann.all().filter(x=>x.id!==id))};
+let curPhone='',photoData='',selCatVal='',meAdmin=null;
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='aDash')updateStats();}
+function toast(msg,type=''){const t=document.getElementById('toast');t.textContent=msg;t.className='toast'+(type?' '+type:'');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
+function showErr(id,msg){const el=document.getElementById(id);el.textContent=msg;el.style.display='block';}
+function clearErr(id){document.getElementById(id).style.display='none';}
+function togglePw(id,btn){const el=document.getElementById(id);if(el.type==='password'){el.type='text';btn.textContent='🙈';}else{el.type='password';btn.textContent='👁';}}
+function selCat(c){selCatVal=c;['school','tution','both'].forEach(x=>{document.getElementById('cat_'+x).classList.toggle('sel',x===c);document.getElementById('chk_'+x).textContent=x===c?'✓':'';});}
+function prevPhoto(input){const file=input.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{photoData=e.target.result;document.getElementById('photoPrev').src=photoData;document.getElementById('photoPrev').style.display='block';document.getElementById('photoIco').style.display='none';};r.readAsDataURL(file);}
+function registerStudent(){const nm=document.getElementById('s_nm').value.trim(),ph=document.getElementById('s_ph').value.trim(),em=document.getElementById('s_em').value.trim(),ad=document.getElementById('s_ad').value.trim(),pn=document.getElementById('s_pn').value.trim(),pp=document.getElementById('s_pp').value.trim(),rel=document.getElementById('s_rel').value,co=document.getElementById('s_co').value.trim(),fe=document.getElementById('s_fe').value.trim();if(!selCatVal){toast('Please select an enrolment category','er');return;}if(!nm||!ph||!em||!ad||!pn||!pp||!co){toast('Please fill all required fields','er');return;}if(Students.byPhone(ph)){toast('This phone number is already registered!','er');return;}Students.add({name:nm,phone:ph,email:em,address:ad,parentName:pn,parentPhone:pp,relationship:rel,course:co,fee:fe||'0',feePaid:'unpaid',photo:photoData,category:selCatVal,registeredAt:new Date().toLocaleDateString('en-IN')});toast('Registration successful! 🎉','ok');['s_nm','s_ph','s_em','s_ad','s_pn','s_pp','s_co','s_fe'].forEach(i=>document.getElementById(i).value='');photoData='';selCatVal='';['school','tution','both'].forEach(c=>{document.getElementById('cat_'+c).classList.remove('sel');document.getElementById('chk_'+c).textContent='';});document.getElementById('photoPrev').style.display='none';document.getElementById('photoIco').style.display='';setTimeout(()=>show('landing'),1500);}
+function studentLogin(){const id=document.getElementById('sl_id').value.trim();if(!id){showErr('slErr','❌ Please enter phone or email');return;}const s=Students.byId(id);if(s){clearErr('slErr');loadPortfolio(s);show('sPort');}else{showErr('slErr','❌ No student found. Check your details.');}}
+function loadPortfolio(s){document.getElementById('pt_top').textContent=s.name;document.getElementById('pt_name').textContent=s.name;document.getElementById('pt_course').textContent=s.course;document.getElementById('pt_phone').textContent=s.phone;document.getElementById('pt_email').textContent=s.email;document.getElementById('pt_addr').textContent=s.address;document.getElementById('pt_par').textContent=s.parentName;document.getElementById('pt_pph').textContent=s.parentPhone;document.getElementById('pt_rel').textContent=s.relationship;document.getElementById('pt_date').textContent=s.registeredAt;document.getElementById('pt_fee').textContent='₹'+(Number(s.fee)||0).toLocaleString('en-IN');const catMap={school:'🏫 Ishan Preschool',tution:'📚 Ishan Academy (Tuition)',both:'🏫📚 Preschool + Tuition'};document.getElementById('pt_cat').textContent=catMap[s.category]||s.category;const fst=document.getElementById('pt_fst');fst.className='fp '+(s.feePaid==='paid'?'pd':'up');fst.textContent=s.feePaid==='paid'?'✅ Fee Paid':'❌ Fee Pending';const ph=document.getElementById('pt_photo');ph.innerHTML=s.photo?`<img src="${s.photo}">`:'🧑‍🎓';loadPortAnn();}
+function loadPortAnn(){const el=document.getElementById('pt_annList');const anns=Ann.all();if(!anns.length){el.innerHTML='<div class="ae"><span>📢</span><p>No announcements yet</p></div>';return;}el.innerHTML=anns.map(a=>`<div class="ac"><div class="ad">${a.date}</div><div class="am">${esc(a.msg)}</div></div>`).join('');}
+function portTab(id,el){document.querySelectorAll('#sPort .tab').forEach(t=>t.classList.remove('act'));el.classList.add('act');document.getElementById('ptPro').style.display=id==='ptPro'?'':'none';document.getElementById('ptAnn').style.display=id==='ptAnn'?'':'none';if(id==='ptAnn')loadPortAnn();}
+function adminRegister(){const nm=document.getElementById('ar_nm').value.trim(),em=document.getElementById('ar_em').value.trim(),pw=document.getElementById('ar_pw').value,pw2=document.getElementById('ar_pw2').value;clearErr('arErr');if(!em||!pw){showErr('arErr','❌ Email and password are required');return;}if(pw.length<6){showErr('arErr','❌ Password must be at least 6 characters');return;}if(pw!==pw2){showErr('arErr','❌ Passwords do not match');return;}if(Admins.byEmail(em)){showErr('arErr','❌ An admin with this email already exists');return;}Admins.add({name:nm||'Admin',email:em,password:pw,createdAt:new Date().toLocaleDateString('en-IN')});toast('✅ Admin account created! Please log in.','ok');['ar_nm','ar_em','ar_pw','ar_pw2'].forEach(i=>document.getElementById(i).value='');setTimeout(()=>show('aLogin'),1300);}
+function adminLogin(){const em=document.getElementById('al_em').value.trim(),pw=document.getElementById('al_pw').value;clearErr('alErr');if(!em||!pw){showErr('alErr','❌ Please enter email and password');return;}const admin=Admins.login(em,pw);if(admin){meAdmin=admin;document.getElementById('ad_lbl').textContent='Logged in as '+admin.name;show('aDash');}else{if(Admins.all().length===0)showErr('alErr','❌ No admin accounts yet. Please register first.');else showErr('alErr','❌ Incorrect email or password');}}
+function adminLogout(){meAdmin=null;show('landing');}
+function clearAllAdmins(){if(!confirm('This will delete ALL admin accounts. Are you sure?'))return;Admins.save([]);toast('All admin accounts cleared','ok');}
+function updateStats(){const all=Students.all();const paid=all.filter(s=>s.feePaid==='paid').length;document.getElementById('st_tot').textContent=all.length;document.getElementById('st_pd').textContent=paid;document.getElementById('st_up').textContent=all.length-paid;}
+function aTab(id,el){document.querySelectorAll('#aDash .tab').forEach(t=>t.classList.remove('act'));el.classList.add('act');['ts','ta','tn','tm'].forEach(x=>document.getElementById(x).style.display=x===id?'':'none');if(id==='ta')renderAll();if(id==='tn')renderAnn();if(id==='tm')renderAdmins();}
+function searchStudent(){const q=document.getElementById('srch').value.trim();const prof=document.getElementById('stProf');const emp=document.getElementById('srchEmp');if(!q){prof.classList.remove('vis');emp.style.display='none';return;}const s=Students.byPhone(q);if(s){curPhone=s.phone;document.getElementById('sp_nm').textContent=s.name;document.getElementById('sp_ph').textContent=s.phone;document.getElementById('sp_co').textContent=s.course;document.getElementById('sp_em').textContent=s.email;document.getElementById('sp_ad').textContent=s.address;document.getElementById('sp_pn').textContent=s.parentName;document.getElementById('sp_pp').textContent=s.parentPhone;document.getElementById('sp_dt').textContent=s.registeredAt;document.getElementById('sp_fe').textContent='₹'+(Number(s.fee)||0).toLocaleString('en-IN');const ct=document.getElementById('sp_ct');ct.innerHTML=s.category==='both'?'<span class="ct bo">🏫📚 Both</span>':s.category==='school'?'<span class="ct sc2">🏫 Preschool</span>':'<span class="ct tu">📚 Tuition</span>';const fb=document.getElementById('sp_fs');fb.textContent=s.feePaid==='paid'?'✅ PAID':'❌ UNPAID';fb.className='fb '+(s.feePaid==='paid'?'pd':'up');document.getElementById('stPhoto').innerHTML=s.photo?`<img src="${s.photo}" style="width:100%;height:100%;object-fit:cover;">`:'🧑‍🎓';prof.classList.add('vis');emp.style.display='none';}else{prof.classList.remove('vis');emp.style.display=q.length>=3?'block':'none';}}
+function setFee(st){if(!curPhone)return;Students.setFee(curPhone,st);searchStudent();updateStats();toast(st==='paid'?'✅ Fee marked as PAID':'❌ Fee marked as UNPAID',st==='paid'?'ok':'er');}
+function delStudentSearch(){if(!curPhone)return;const s=Students.byPhone(curPhone);if(!s)return;if(!confirm(`Delete record for "${s.name}"?\nThis cannot be undone.`))return;Students.remove(curPhone);curPhone='';document.getElementById('stProf').classList.remove('vis');document.getElementById('srch').value='';updateStats();toast('🗑️ Student deleted','ok');}
+function renderAll(){const all=Students.all();const el=document.getElementById('allList');if(!all.length){el.innerHTML='<div class="emp"><span>📋</span><p>No students registered yet</p></div>';return;}el.innerHTML=all.map(s=>{const cl=s.category==='both'?'bo':s.category==='school'?'sc2':'tu';const lb=s.category==='both'?'Both':s.category==='school'?'School':'Tuition';return `<div class="sli"><div class="mp" onclick="viewFromList('${esc(s.phone)}')" style="cursor:pointer">${s.photo?`<img src="${s.photo}">`:'🧑‍🎓'}</div><div class="si2" onclick="viewFromList('${esc(s.phone)}')" style="cursor:pointer"><strong>${esc(s.name)}</strong><small>${esc(s.phone)} · ${esc(s.course)}</small></div><div class="sr2"><span class="fb ${s.feePaid==='paid'?'pd':'up'}" style="font-size:0.62rem;padding:3px 8px">${s.feePaid==='paid'?'PAID':'UNPAID'}</span><span class="ct ${cl}" style="font-size:0.6rem">${lb}</span><button class="btn bpu bsm" style="font-size:0.62rem;padding:2px 8px;margin-top:2px" onclick="delFromList('${esc(s.phone)}')">🗑️ Delete</button></div></div>`;}).join('');}
+function viewFromList(phone){aTab('ts',document.querySelector('#aDash .tab'));document.getElementById('srch').value=phone;searchStudent();}
+function delFromList(phone){const s=Students.byPhone(phone);if(!s)return;if(!confirm(`Delete record for "${s.name}"?\nThis cannot be undone.`))return;Students.remove(phone);if(curPhone&&fmt(curPhone)===fmt(phone)){curPhone='';document.getElementById('stProf').classList.remove('vis');document.getElementById('srch').value='';}updateStats();renderAll();toast('🗑️ Student deleted','ok');}
+function postAnn(){const msg=document.getElementById('annTxt').value.trim();if(!msg){toast('Please type a message first','er');return;}Ann.add(msg);document.getElementById('annTxt').value='';renderAnn();toast('📢 Announcement posted to all students!','ok');}
+function renderAnn(){const anns=Ann.all();const el=document.getElementById('annList');if(!anns.length){el.innerHTML='<div class="ae"><span>📢</span><p>No announcements posted yet</p></div>';return;}el.innerHTML=anns.map(a=>`<div class="ac"><div class="ad">${a.date}</div><div class="am">${esc(a.msg)}</div><button class="adel" onclick="delAnn(${a.id})">✕</button></div>`).join('');}
+function delAnn(id){Ann.remove(id);renderAnn();toast('Announcement deleted');}
+function addAdmin(){const nm=document.getElementById('na_nm').value.trim(),em=document.getElementById('na_em').value.trim(),pw=document.getElementById('na_pw').value;clearErr('naErr');if(!em||!pw){showErr('naErr','❌ Email and password are required');return;}if(pw.length<6){showErr('naErr','❌ Password must be at least 6 characters');return;}if(Admins.byEmail(em)){showErr('naErr','❌ Admin with this email already exists');return;}Admins.add({name:nm||'Admin',email:em,password:pw,createdAt:new Date().toLocaleDateString('en-IN')});['na_nm','na_em','na_pw'].forEach(i=>document.getElementById(i).value='');renderAdmins();toast('✅ New admin added!','ok');}
+function renderAdmins(){const all=Admins.all();const el=document.getElementById('admList');if(!all.length){el.innerHTML='<div class="emp" style="padding:1.5rem"><span>👥</span><p>No admin accounts yet</p></div>';return;}el.innerHTML=all.map(a=>`<div class="sli" style="cursor:default"><div class="mp" style="background:var(--y);font-size:1.1rem">🛡️</div><div class="si2"><strong>${esc(a.name)}</strong><small>${esc(a.email)} · Added ${a.createdAt||'—'}</small></div>${meAdmin&&meAdmin.email.toLowerCase()!==a.email.toLowerCase()?`<button class="btn bpu bsm" style="font-size:0.65rem;padding:3px 10px" onclick="removeAdmin('${esc(a.email)}')">🗑️ Remove</button>`:`<span style="font-size:0.72rem;color:var(--mu);font-weight:700;padding:0 0.5rem">YOU</span>`}</div>`).join('');}
+function removeAdmin(email){const a=Admins.byEmail(email);if(!a)return;if(!confirm(`Remove admin "${a.name}" (${a.email})?`))return;Admins.remove(email);renderAdmins();toast('Admin removed','ok');}
+</script>
+</body>
+</html>
